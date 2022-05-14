@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="SvC-nQ-WZj" customClass="RecommendedCollectionViewCell" customModule="NutriRecipies" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="193" height="304"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="u1e-HD-zBq">
+                <rect key="frame" x="0.0" y="0.0" width="193" height="304"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yhC-RN-7nH">
+                        <rect key="frame" x="0.0" y="0.0" width="193" height="201"/>
+                        <color key="tintColor" name="RecipeName"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXw-Lf-odn">
+                        <rect key="frame" x="16" y="209" width="177" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="qhg-Ac-KNq"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe by:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JPc-wP-hPy">
+                        <rect key="frame" x="16" y="279" width="88" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="88" id="MEc-vc-rvc"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="14"/>
+                        <color key="textColor" name="RecipeName"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mealtype" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nKK-6v-JLR">
+                        <rect key="frame" x="16" y="246" width="169" height="21"/>
+                        <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7g-aA-duF">
+                        <rect key="frame" x="100" y="279" width="77" height="17"/>
+                        <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" name="AccentColor"/>
+                <constraints>
+                    <constraint firstItem="yhC-RN-7nH" firstAttribute="trailing" secondItem="HXw-Lf-odn" secondAttribute="trailing" id="044-g6-14p"/>
+                    <constraint firstItem="yhC-RN-7nH" firstAttribute="top" secondItem="u1e-HD-zBq" secondAttribute="top" constant="-1" id="71K-vz-lhi"/>
+                    <constraint firstItem="s7g-aA-duF" firstAttribute="bottom" secondItem="u1e-HD-zBq" secondAttribute="bottomMargin" id="7Ka-eW-Di2"/>
+                    <constraint firstItem="s7g-aA-duF" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="u1e-HD-zBq" secondAttribute="trailingMargin" id="BT0-O3-kcR"/>
+                    <constraint firstAttribute="trailing" secondItem="nKK-6v-JLR" secondAttribute="trailing" constant="8" id="Eq1-hP-sjg"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JPc-wP-hPy" secondAttribute="trailing" constant="20" symbolic="YES" id="RN7-ac-rjT"/>
+                    <constraint firstItem="s7g-aA-duF" firstAttribute="leading" secondItem="u1e-HD-zBq" secondAttribute="leading" constant="100" id="VGV-gt-H6Y"/>
+                    <constraint firstItem="JPc-wP-hPy" firstAttribute="leading" secondItem="u1e-HD-zBq" secondAttribute="leadingMargin" id="WTl-bf-VIQ"/>
+                    <constraint firstItem="JPc-wP-hPy" firstAttribute="leading" secondItem="HXw-Lf-odn" secondAttribute="leading" id="Wzj-FR-eEh"/>
+                    <constraint firstAttribute="trailing" secondItem="HXw-Lf-odn" secondAttribute="trailing" id="Z7f-Dx-DOm"/>
+                    <constraint firstItem="JPc-wP-hPy" firstAttribute="firstBaseline" secondItem="s7g-aA-duF" secondAttribute="firstBaseline" id="cVt-1p-rKJ"/>
+                    <constraint firstItem="s7g-aA-duF" firstAttribute="baseline" secondItem="JPc-wP-hPy" secondAttribute="baseline" id="fiM-gG-bY6"/>
+                    <constraint firstItem="yhC-RN-7nH" firstAttribute="leading" secondItem="u1e-HD-zBq" secondAttribute="leading" id="gqu-6t-J3B"/>
+                    <constraint firstItem="nKK-6v-JLR" firstAttribute="top" secondItem="HXw-Lf-odn" secondAttribute="bottom" constant="-3" id="iuJ-uv-zRO"/>
+                    <constraint firstItem="JPc-wP-hPy" firstAttribute="top" secondItem="nKK-6v-JLR" secondAttribute="bottom" constant="12" id="kI1-0x-wdz"/>
+                    <constraint firstItem="HXw-Lf-odn" firstAttribute="top" secondItem="yhC-RN-7nH" secondAttribute="bottom" constant="6.5" id="lG3-UE-Kwn"/>
+                    <constraint firstItem="nKK-6v-JLR" firstAttribute="leading" secondItem="u1e-HD-zBq" secondAttribute="leading" constant="16" id="qyh-Kk-gCq"/>
+                    <constraint firstItem="s7g-aA-duF" firstAttribute="top" secondItem="HXw-Lf-odn" secondAttribute="bottom" constant="30" id="vH3-In-Gx2"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="193" height="304"/>
+            <connections>
+                <outlet property="mealTypeLabel" destination="nKK-6v-JLR" id="V5A-1V-kHk"/>
+                <outlet property="recipeImg" destination="yhC-RN-7nH" id="oFG-eD-z5u"/>
+                <outlet property="recipeNameLabel" destination="HXw-Lf-odn" id="iLx-55-8Mp"/>
+                <outlet property="sourceLabel" destination="s7g-aA-duF" id="0l1-iP-3gE"/>
+            </connections>
+            <point key="canvasLocation" x="-80.434782608695656" y="-328.125"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="square" catalog="system" width="128" height="114"/>
+        <namedColor name="AccentColor">
+            <color red="0.88599997758865356" green="0.47499999403953552" blue="0.31000000238418579" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="RecipeName">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
