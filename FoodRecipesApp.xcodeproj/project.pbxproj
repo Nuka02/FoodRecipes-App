@@ -110,6 +110,9 @@
 		A784ECD6282C256E00F290E4 /* Cell config */ = {
 			isa = PBXGroup;
 			children = (
+				A7754D68282E8774007B18DD /* SearchRecipesResultCell.xib */,
+				A7754D66282E8742007B18DD /* LoadingCell.xib */,
+				A7754D64282E86E1007B18DD /* NoRecipesFoundCell.xib */,
 				A784ECD2282C24DC00F290E4 /* RecommendedTableViewCell.swift */,
 				A784ECD0282C1F1C00F290E4 /* RecommendedCollectionViewCell.swift */,
 				A784ECD4282C254900F290E4 /* SearchRecipesResultCell.swift */,
@@ -151,12 +154,9 @@
 		A784ECFA282D516400F290E4 /* Discover Screen */ = {
 			isa = PBXGroup;
 			children = (
+				A784ECF8282D4F2A00F290E4 /* SearchRecipesViewController.swift */,
 				A784ECDB282C279900F290E4 /* URL Session */,
 				A784ECD6282C256E00F290E4 /* Cell config */,
-				A784ECF8282D4F2A00F290E4 /* SearchRecipesViewController.swift */,
-				A7754D64282E86E1007B18DD /* NoRecipesFoundCell.xib */,
-				A7754D66282E8742007B18DD /* LoadingCell.xib */,
-				A7754D68282E8774007B18DD /* SearchRecipesResultCell.xib */,
 			);
 			path = "Discover Screen";
 			sourceTree = "<group>";

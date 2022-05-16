@@ -1,10 +1,3 @@
-//
-//  IngredientsViewCell.swift
-//  FoodRecipesApp
-//
-//  Created by Ajdin on 11. 5. 2022..
-//
-
 import UIKit
 
 class IngredientsViewCell: UITableViewCell {

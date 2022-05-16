@@ -61,7 +61,7 @@
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="40" id="p1K-uk-VFb"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="17"/>
+                                                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="17"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -70,23 +70,23 @@
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="88" id="gUc-hN-Njk"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="14"/>
+                                                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="14"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RA2-dt-B3q">
-                                                                        <rect key="frame" x="100" y="288" width="98" height="14"/>
+                                                                        <rect key="frame" x="100" y="288" width="94" height="14"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="98" id="bme-jo-dbf"/>
                                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="98" id="eyX-Sg-dY9"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="14"/>
+                                                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="14"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mealtype" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jt-2D-MEa">
                                                                         <rect key="frame" x="8" y="259" width="182" height="21"/>
-                                                                        <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="14"/>
+                                                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="14"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -102,13 +102,13 @@
                                                                     <constraint firstItem="5jt-2D-MEa" firstAttribute="top" secondItem="Fvh-t7-BEw" secondAttribute="bottom" constant="1" id="Qh5-NK-SGS"/>
                                                                     <constraint firstItem="RA2-dt-B3q" firstAttribute="leading" secondItem="fJM-Ic-2Tz" secondAttribute="leading" constant="100" id="QkZ-OM-6us"/>
                                                                     <constraint firstItem="RA2-dt-B3q" firstAttribute="leading" relation="lessThanOrEqual" secondItem="fJM-Ic-2Tz" secondAttribute="leading" constant="100" id="WgE-rG-Xa1"/>
-                                                                    <constraint firstItem="RA2-dt-B3q" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fJM-Ic-2Tz" secondAttribute="trailingMargin" id="Ybw-Wt-zR6"/>
                                                                     <constraint firstItem="gcG-gL-ffz" firstAttribute="firstBaseline" secondItem="RA2-dt-B3q" secondAttribute="firstBaseline" id="c3c-xi-THa"/>
                                                                     <constraint firstItem="gcG-gL-ffz" firstAttribute="top" secondItem="5jt-2D-MEa" secondAttribute="bottom" constant="8" id="c5c-7c-4Vd"/>
                                                                     <constraint firstItem="5jt-2D-MEa" firstAttribute="leading" secondItem="fJM-Ic-2Tz" secondAttribute="leading" constant="8" id="cPL-wj-65X"/>
                                                                     <constraint firstItem="RA2-dt-B3q" firstAttribute="bottom" secondItem="fJM-Ic-2Tz" secondAttribute="bottomMargin" id="gM2-5l-Geh"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="RA2-dt-B3q" secondAttribute="trailing" constant="12" id="h8J-OC-mMo"/>
                                                                     <constraint firstItem="RA2-dt-B3q" firstAttribute="top" secondItem="Fvh-t7-BEw" secondAttribute="bottom" constant="30" id="hYc-7j-Yzw"/>
-                                                                    <constraint firstItem="RA2-dt-B3q" firstAttribute="leading" secondItem="fJM-Ic-2Tz" secondAttribute="leading" constant="100" id="jI1-d5-Q9e"/>
+                                                                    <constraint firstItem="RA2-dt-B3q" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fJM-Ic-2Tz" secondAttribute="leading" symbolic="YES" id="jI1-d5-Q9e"/>
                                                                     <constraint firstItem="RA2-dt-B3q" firstAttribute="baseline" secondItem="gcG-gL-ffz" secondAttribute="baseline" id="lVj-nc-bYE"/>
                                                                     <constraint firstAttribute="trailing" secondItem="5jt-2D-MEa" secondAttribute="trailing" constant="16" id="yt2-aN-JA9"/>
                                                                     <constraint firstAttribute="trailing" secondItem="vOW-u9-lPg" secondAttribute="trailing" id="zra-Pe-znf"/>
@@ -193,7 +193,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="RestrictionsCell" rowHeight="64" id="XEL-Af-wLf" customClass="RestrictionsTableViewCell" customModule="NutriRecipes" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="RestrictionsCell" rowHeight="64" id="XEL-Af-wLf" customClass="RestrictionsTableViewCell" customModule="FoodRecipesApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XEL-Af-wLf" id="rJC-5S-Rjr">
@@ -235,7 +235,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="nvE-MS-P9c">
                             <connections>
-                                <action selector="doneButton" destination="D8v-BZ-yL0" id="fxW-4E-Oiq"/>
+                                <action selector="doneButton:" destination="D8v-BZ-yL0" id="GLf-4I-34d"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -253,7 +253,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RecipeHeaderCell" rowHeight="339" id="uNW-MA-Yv1" customClass="RecipeHeaderCell" customModule="NutriRecipes" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RecipeHeaderCell" rowHeight="339" id="uNW-MA-Yv1" customClass="RecipeHeaderCell" customModule="FoodRecipesApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="339"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uNW-MA-Yv1" id="mqr-d9-J55">
@@ -268,17 +268,17 @@
                                             </constraints>
                                         </imageView>
                                         <view alpha="0.94999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3z0-bF-Ffm">
-                                            <rect key="frame" x="87" y="225" width="240.5" height="114"/>
+                                            <rect key="frame" x="81.5" y="225" width="251.5" height="114"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mealtype" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cj7-Dd-dBz">
-                                                    <rect key="frame" x="8" y="49" width="214" height="14"/>
-                                                    <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="14"/>
+                                                    <rect key="frame" x="8" y="49" width="225" height="14"/>
+                                                    <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rY-fp-AGs">
-                                                    <rect key="frame" x="8" y="93" width="57.5" height="13"/>
-                                                    <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="13"/>
+                                                    <rect key="frame" x="8" y="93" width="68.5" height="13"/>
+                                                    <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="13"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -287,29 +287,29 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="215" id="ffz-MD-eED"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 servings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNz-6L-zCy">
-                                                    <rect key="frame" x="89" y="93" width="62" height="13"/>
-                                                    <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="13"/>
+                                                    <rect key="frame" x="92.5" y="93" width="66" height="13"/>
+                                                    <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="13"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nk7-Q8-1vC">
-                                                    <rect key="frame" x="8" y="24" width="224.5" height="17"/>
-                                                    <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="17"/>
+                                                    <rect key="frame" x="8" y="24" width="235.5" height="17"/>
+                                                    <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500 calories" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grh-1p-NIe">
-                                                    <rect key="frame" x="163" y="93" width="75" height="13"/>
+                                                    <rect key="frame" x="170.5" y="93" width="78.5" height="13"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="52" id="MFk-Us-31u"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="52" id="t2F-VX-RJk"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="13"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -366,7 +366,7 @@
                                     <outlet property="servingsLabel" destination="WNz-6L-zCy" id="OZs-Es-LJ7"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="IngredientsListCell" rowHeight="65" id="yVJ-00-F7G" customClass="IngredientsViewCell" customModule="NutriRecipes" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="IngredientsListCell" rowHeight="65" id="yVJ-00-F7G" customClass="IngredientsViewCell" customModule="FoodRecipesApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="383.5" width="414" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yVJ-00-F7G" id="Fhb-bV-5UU">
@@ -391,7 +391,7 @@
                                     <outlet property="ingredientLabel" destination="h3i-24-zz7" id="Ryb-hA-1KE"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DirectionsCell" rowHeight="103" id="CAs-We-ze3" customClass="DirectionsViewCell" customModule="NutriRecipes" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DirectionsCell" rowHeight="103" id="CAs-We-ze3" customClass="DirectionsViewCell" customModule="FoodRecipesApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="448.5" width="414" height="103"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CAs-We-ze3" id="8PQ-QN-r4M">
@@ -413,7 +413,7 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Website" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aL-DE-sdQ">
-                                            <rect key="frame" x="180" y="11" width="169" height="21"/>
+                                            <rect key="frame" x="281" y="11" width="68" height="21"/>
                                             <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -429,7 +429,7 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="9aL-DE-sdQ" firstAttribute="leading" secondItem="m1V-KX-AiN" secondAttribute="trailing" constant="8" id="4lt-C4-Uw0"/>
+                                        <constraint firstItem="9aL-DE-sdQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="m1V-KX-AiN" secondAttribute="trailing" constant="8" symbolic="YES" id="4lt-C4-Uw0"/>
                                         <constraint firstItem="9aL-DE-sdQ" firstAttribute="top" secondItem="8PQ-QN-r4M" secondAttribute="topMargin" id="Agq-iY-6L9"/>
                                         <constraint firstItem="8b0-1h-Mhc" firstAttribute="bottom" secondItem="8PQ-QN-r4M" secondAttribute="bottomMargin" id="EFq-zO-hQd"/>
                                         <constraint firstItem="8b0-1h-Mhc" firstAttribute="leading" secondItem="8PQ-QN-r4M" secondAttribute="leadingMargin" constant="68" id="NOr-eE-ZSU"/>

@@ -42,7 +42,8 @@ extension RecommendationRecipes {
           let decoder = JSONDecoder()
             let result = try decoder.decode(RecommendationRecipes.self, from: data)
             return result.hits
-        } catch {
+        }
+        catch {
           return []
         }
     }

@@ -1,10 +1,3 @@
-//
-//  RecipeDetailViewController.swift
-//  FoodRecipesApp
-//
-//  Created by Ajdin on 11. 5. 2022..
-//
-
 import UIKit
 
 protocol RecipeDetailViewControllerDelegate: AnyObject {
@@ -22,45 +15,6 @@ class RecipeDetailViewController: UITableViewController {
     var recommendedResult: RecommendationResults!
 
     weak var delegate: RecipeDetailViewControllerDelegate?
-    //        if (searchResult != nil){
-//            let item = searchResult
-//            delegate?.addItemViewController(self, didFinishAdding: item!)
-//        }
-//        else{
-//            let item = trendingResult
-//    //      item?.recipe = trendingResult.recipe
-//            delegate?.addItemViewController(self, didFinishAdding: item!)
-//        }
-    
-//    @IBAction func addFav(_ sender: Any) {
-//    }
-    
-//    @IBAction func nutritionButton() {
-//        self.performSegue(withIdentifier: "ShowNutrition", sender: self)
-//    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//      if segue.identifier == "ShowNutrition" {
-//        let nutritionViewController = segue.destination as! NutrientsViewController
-//        if searchResult != nil{
-//            nutritionViewController.searchResult = searchResult
-//        }
-//        else if trendingResult != nil{
-//            nutritionViewController.trendingResult = trendingResult
-//        }
-//        else{
-//            nutritionViewController.recommendationResult = recommendedResult
-//        }
-//      }
-      /*else if segue.identifier == "favoritesSegue"{
-          let favoritesViewController = segue.destination as! FavoriteRecipesViewController
-            if searchResult != nil{
-                favoritesViewController.searchResult = searchResult
-            }
-            else{
-                favoritesViewController.trendingResult = trendingResult
-            }
-        }*/
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,9 +48,6 @@ class RecipeDetailViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        if section == 1{
-//            return "Details"
-//        }
         if section == 1{
             return "Ingredients"
         }
@@ -105,14 +56,9 @@ class RecipeDetailViewController: UITableViewController {
         }
         return nil
     }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if section == 0{
-//            return 1
-//        }
-//        else if(section == 1){
-//            return 1
-//        }
-        if(section == 1){
+        if (section == 1){
             if (searchResult != nil){
                 return searchResult.recipe.ingredientLines.count
             }
@@ -127,6 +73,7 @@ class RecipeDetailViewController: UITableViewController {
             return 1
         }
     }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeHeaderCell", for: indexPath) as! RecipeHeaderCell
@@ -141,16 +88,6 @@ class RecipeDetailViewController: UITableViewController {
             }
             return cell
         }
-//        else if indexPath.section == 1{
-//            let cell1 = tableView.dequeueReusableCell(withIdentifier: "NutritionCell", for: indexPath) as! NutritionViewCell
-//            if (searchResult != nil){
-//                cell1.configure(for: searchResult)
-//            }
-//            else{
-//                cell1.configure(for: trendingResult)
-//            }
-//            return cell1
-//        }
         else if indexPath.section == 1{
             let cell2 = tableView.dequeueReusableCell(withIdentifier: "IngredientsListCell", for: indexPath) as! IngredientsViewCell
             if (searchResult != nil){
@@ -164,7 +101,7 @@ class RecipeDetailViewController: UITableViewController {
             }
             return cell2
         }
-        else{
+        else {
             let cell3 = tableView.dequeueReusableCell(withIdentifier: "DirectionsCell", for: indexPath) as! DirectionsViewCell
             if(searchResult != nil){
                 cell3.configure(for: searchResult)
@@ -178,13 +115,8 @@ class RecipeDetailViewController: UITableViewController {
             return cell3
         }
     }
-    // MARK: - Table View Delegates
     
-    // don't select row
-    override func tableView(
-      _ tableView: UITableView,
-      willSelectRowAt indexPath: IndexPath
-    ) -> IndexPath? {
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
       return nil
     }
 }

@@ -8,26 +8,26 @@
 import UIKit
 
 protocol RestrictionsControllerDelegate: AnyObject {
-  func restrictionsControllerDidCancel(
-    _ controller: RestrictionsTableViewController)
-  func restrictionsController(
-    _ controller: RestrictionsTableViewController,
-    didFinishAdding item: [ChecklistItem]
-  )
+    func restrictionsControllerDidCancel(
+        _ controller: RestrictionsTableViewController)
+    func restrictionsController(
+        _ controller: RestrictionsTableViewController,
+        didFinishAdding item: [ChecklistItem]
+    )
 }
 
 class RestrictionsTableViewController: UITableViewController {
     var delegate: RestrictionsControllerDelegate?
-
+    
     @IBAction func cancelButton() {
         delegate?.restrictionsControllerDidCancel(self)
     }
-    @IBAction func doneButton() {
-        let itemArray = items
-        delegate?.restrictionsController(self, didFinishAdding: itemArray)
-        
+    
+    @IBAction func doneButton(_ sender: Any) {
+        //        let itemArray = items
+        delegate?.restrictionsController(self, didFinishAdding: items)
     }
-
+    
     var items = [ChecklistItem]()
     
     // define health restriction labels
@@ -47,7 +47,8 @@ class RestrictionsTableViewController: UITableViewController {
                         "Mollusk-Free"]
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         for i in healthLabels{
             let rLabels = ChecklistItem()
             rLabels.text = i
@@ -56,65 +57,67 @@ class RestrictionsTableViewController: UITableViewController {
         loadChecklistItems()
     }
     func configureCheckmark(
-      for cell: UITableViewCell,
+        for cell: UITableViewCell,
         with item: ChecklistItem
     ) {
         if item.checked {
             cell.accessoryType = .checkmark
-          } else {
+        } else {
             cell.accessoryType = .none
-      }
+        }
     }
     func configureText(
         for cell: UITableViewCell,
-          with item: ChecklistItem
-        ) {
+        with item: ChecklistItem
+    ) {
         let label = cell.viewWithTag(100) as! UILabel
         label.text = item.text
     }
     func documentsDirectory() -> URL {
-      let paths = FileManager.default.urls(
-        for: .documentDirectory,
-        in: .userDomainMask)
-      return paths[0]
+        let paths = FileManager.default.urls(
+            for: .documentDirectory,
+               in: .userDomainMask)
+        return paths[0]
     }
-
+    
     func dataFilePath() -> URL {
-      return documentsDirectory().appendingPathComponent("FoodRecipes.plist")
+        return documentsDirectory().appendingPathComponent("FoodRecipes.plist")
     }
-    // save which restriction items the user picks
+    
+    // save selected restrictions
     func saveChecklistItems() {
-      let encoder = PropertyListEncoder()
-      do {
-        let data = try encoder.encode(items)
-        try data.write(
-          to: dataFilePath(),
-          options: Data.WritingOptions.atomic)
-      } catch {
-        print("Error encoding item array: \(error.localizedDescription)")
-      }
-    }
-    // load users' restriction items
-    func loadChecklistItems() {
-      let path = dataFilePath()
-      if let data = try? Data(contentsOf: path) {
-        let decoder = PropertyListDecoder()
+        let encoder = PropertyListEncoder()
         do {
-            items = try decoder.decode(
-                [ChecklistItem].self,
-            from: data)
+            let data = try encoder.encode(items)
+            try data.write(
+                to: dataFilePath(),
+                options: Data.WritingOptions.atomic)
         } catch {
-          print("Error decoding item array: \(error.localizedDescription)")
+            print("Error encoding item array: \(error.localizedDescription)")
         }
-      }
     }
-
+    
+    // load user's restriction items
+    func loadChecklistItems() {
+        let path = dataFilePath()
+        if let data = try? Data(contentsOf: path) {
+            let decoder = PropertyListDecoder()
+            do {
+                items = try decoder.decode(
+                    [ChecklistItem].self,
+                    from: data)
+            } catch {
+                print("Error decoding item array: \(error.localizedDescription)")
+            }
+        }
+    }
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
@@ -127,16 +130,13 @@ class RestrictionsTableViewController: UITableViewController {
         
         return cell
     }
-
+    
     // toggle the checkmark
-    override func tableView(
-      _ tableView: UITableView,
-      didSelectRowAt indexPath: IndexPath
-    ) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) {
-        let item = items[indexPath.row]
-          item.checked.toggle()
-          configureCheckmark(for: cell, with: item)
+            let item = items[indexPath.row]
+            item.checked.toggle()
+            configureCheckmark(for: cell, with: item)
         }
         tableView.deselectRow(at: indexPath, animated: true)
         saveChecklistItems()

@@ -13,6 +13,7 @@ class SearchRecipesResultCell: UITableViewCell {
         selectedView.backgroundColor = UIColor(named: "SearchBar")?.withAlphaComponent(0.5)
         selectedBackgroundView = selectedView
     }
+    
     // MARK: - Helper Methods
     func configure(for result: SearchRecipesResult) {
         recipeNameLabel.text = result.recipe.label

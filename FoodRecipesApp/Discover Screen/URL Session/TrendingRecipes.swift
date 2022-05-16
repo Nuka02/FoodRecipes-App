@@ -6,6 +6,7 @@ struct TrendingRecipes: Codable{
     var count: Int
     var hits = [TrendingResults]()
 }
+
 struct TrendingResults: Codable {
     var recipe: Recipe
     
@@ -27,7 +28,6 @@ struct TrendingResults: Codable {
     }
 }
 
-
 extension TrendingRecipes {
     static func trendingRecipies() -> [TrendingResults]{
         guard
@@ -41,7 +41,8 @@ extension TrendingRecipes {
           let decoder = JSONDecoder()
             let result = try decoder.decode(TrendingRecipes.self, from: data)
             return result.hits
-        } catch {
+        }
+        catch {
           return []
         }
     }

@@ -11,6 +11,7 @@ class SearchRecipesViewController: UIViewController, RestrictionsControllerDeleg
     
     func restrictionsController(_ controller: RestrictionsTableViewController, didFinishAdding item: [ChecklistItem]) {
         restrictions = item
+        searchNow()
         self.dismiss(animated: false, completion: nil)
     }
     
@@ -28,6 +29,8 @@ class SearchRecipesViewController: UIViewController, RestrictionsControllerDeleg
     var isLoading = false
     var restrictions = [ChecklistItem]()
     var dataTask: URLSessionDataTask?
+    
+    var config: [String: Any]?
     
     
     struct TableView {
@@ -117,12 +120,6 @@ class SearchRecipesViewController: UIViewController, RestrictionsControllerDeleg
                     self.moveOnRecipeDetail(index: index)
                 }
             }
-            //        else {
-            //            let checklist = trendingResults[index]
-            //            performSegue(
-            //              withIdentifier: "recipeSegue",
-            //              sender: checklist)
-            //        }
             
         }
     }
@@ -225,24 +222,7 @@ class SearchRecipesViewController: UIViewController, RestrictionsControllerDeleg
             return []
         }
     }
-    // presents an alert controller with an error message.
-    func showNetworkError() {
-        let alert = UIAlertController(
-            title: "Whoops...",
-            message: "There was an error accessing the recipes." +
-            " Please try again.",
-            preferredStyle: .alert)
-        
-        let action = UIAlertAction(
-            title: "OK", style: .default, handler: nil)
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
-    }
-}
-// MARK:- Search Bar Delegate
-extension SearchRecipesViewController: UISearchBarDelegate{
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
-    {
+    func searchNow() {
         if !searchBar.text!.isEmpty
         {
             searchBar.resignFirstResponder() // dismiss keyboard
@@ -268,8 +248,8 @@ extension SearchRecipesViewController: UISearchBarDelegate{
                 data, response, error in
                 if let error = error as NSError?, error.code == -999 {
                     return
-                } else if let httpResponse = response as? HTTPURLResponse,
-                          httpResponse.statusCode == 200 {
+                }
+                else if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
                     if let data = data {
                         self.searchResults = self.parse(data: data)
                         DispatchQueue.main.async {
@@ -278,7 +258,8 @@ extension SearchRecipesViewController: UISearchBarDelegate{
                         }
                         return
                     }
-                } else {
+                }
+                else {
                     print("Failure! \(response!)")
                 }
                 DispatchQueue.main.async {
@@ -292,17 +273,41 @@ extension SearchRecipesViewController: UISearchBarDelegate{
         }
     }
     
+    func showNetworkError() {
+        let alert = UIAlertController(
+            title: "Whoops...",
+            message: "There was an error accessing the recipes." +
+            " Please try again.",
+            preferredStyle: .alert)
+        
+        let action = UIAlertAction(
+            title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+}
+
+// MARK:- Search Bar Delegate
+extension SearchRecipesViewController: UISearchBarDelegate{
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
+    {
+        searchNow()
+    }
+    
+    
     // go back to trending page when search is cleared
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
             DispatchQueue.main.async {
                 self.hasSearched = false
+                self.searchResultText = ""
                 self.isLoading = false
                 self.tableView.reloadData()
                 self.viewDidLoad()
             }
         }
     }
+    
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         searchResultText = searchBar.text!
     }
@@ -314,11 +319,10 @@ extension SearchRecipesViewController: UISearchBarDelegate{
 
 // MARK:- Table View Delegate
 
-// handles all the table view related delegate methods.
 extension SearchRecipesViewController: UITableViewDelegate, UITableViewDataSource
 {
     func numberOfSections(in tableView: UITableView) -> Int {
-        if !hasSearched && !isLoading && searchResults.count == 0{
+        if !hasSearched && !isLoading && searchResultText.count == 0{
             return 2
         }
         else{
@@ -405,7 +409,6 @@ extension SearchRecipesViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //        indexOfSelectedChecklist = indexPath.row
         UserDefaults.standard.set(indexPath.row, forKey: "RecipesIndex")
         UserDefaults.standard.set(indexPath.section, forKey: "RecipesSection")
         
@@ -417,13 +420,12 @@ extension SearchRecipesViewController: UITableViewDelegate, UITableViewDataSourc
             tableView.deselectRow(at: indexPath, animated: true)
         }
     }
-    // only select rows when actual search results
-    func tableView(
-        _ tableView: UITableView,
-        willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
             if (hasSearched && searchResults.count == 0) || isLoading {
                 return nil
-            } else{
+            }
+            else {
                 return indexPath
             }
         }
@@ -438,4 +440,5 @@ extension SearchRecipesViewController: UITableViewDelegate, UITableViewDataSourc
         }
         return "Trending Recipes"
     }
+    
 }

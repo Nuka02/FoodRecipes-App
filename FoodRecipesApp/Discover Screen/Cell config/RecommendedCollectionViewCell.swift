@@ -19,22 +19,17 @@ class RecommendedCollectionViewCell: UICollectionViewCell {
     var downloadTask: URLSessionDownloadTask?
     
     override func awakeFromNib() {
-            super.awakeFromNib()
+        super.awakeFromNib()
         // Apply rounded corners
-        contentView.layer.cornerRadius = 5.0
+        contentView.layer.cornerRadius = 15.0
         contentView.layer.masksToBounds = true
-                
-        // Set masks to bounds to false to avoid the shadow
-        // from being clipped to the corner radius
-        layer.cornerRadius = 5.0
-        layer.masksToBounds = false
     }
-
+    
     
     func configure(for result: RecommendationResults){
         
         recipeNameLabel.text = result.recipe.label
-
+        
         if ((result.recipe.label?.isEmpty) == nil) {
             recipeNameLabel.text = "Unknown"
         }
@@ -43,7 +38,7 @@ class RecommendedCollectionViewCell: UICollectionViewCell {
         
         recipeImg.image = UIImage(systemName: "square")
         if let previewURL = URL(string: result.recipe.image!) {
-          downloadTask = recipeImg.loadImage(url: previewURL)
+            downloadTask = recipeImg.loadImage(url: previewURL)
         }
     }
 }
@@ -52,7 +47,7 @@ extension String {
     func capitalizingFirstLetter() -> String {
         return prefix(1).capitalized + dropFirst()
     }
-
+    
     mutating func capitalizeFirstLetter() {
         self = self.capitalizingFirstLetter()
     }
